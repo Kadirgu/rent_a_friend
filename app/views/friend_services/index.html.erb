@@ -14,10 +14,10 @@
     <% @friend_services.each do |friend_service| %>
       <div class="col-6">
         <div class="friend-service">
-            <%= cl_image_tag(friend_service.photo.key)%>
+          <%= cl_image_tag(friend_service.photo.key, class: "friend-service-overview-image ") %>
           <div class="friend-service-content">
             <h1><%= friend_service.title %></h2>
-            <h2><%= friend_service.description %></>
+            <h2><%= friend_service.description %>
             <div class="friend-service-details">
               <p><strong>Availability:</strong><br><%= friend_service.availability %></p>
               <p><strong>Category:</strong><br><%= friend_service.category %></p>
