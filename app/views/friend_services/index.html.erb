@@ -1,22 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80);">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1>RentAFreind</h1>
+    <p>Some catchy Subline</p>
   </div>
 </div>
 
-<% @friend_services.each do |friend_services| %>
-  <p>Title: <%= friend_services.title %></p>
-  <p>Description: <%= friend_services.description %></p>
-  <p>First Name: <%= friend_services.first_name %></p>
-  <p>Last Name: <%= friend_services.last_name %></p>
-  <p>Age: <%= friend_services.age %></p>
-  <p>Gender: <%= friend_services.gender %></p>
-  <p>Phone Number: <%= friend_services.phone_number %></p>
-  <p>Email: <%= friend_services.email %></p>
-  <p>Category: <%= friend_services.category %></p>
-  <p>Availability: <%= friend_services.availability %></p>
-  <p>Interests: <%= friend_services.interests %></p>
-  <%= friend_services.description %>
-<% end %>
+<div class="container">
+<h2>All Friend Services</h2>
+<br>
+  <div class="row">
+    <% @friend_services.each do |friend_services| %>
+      <div class="col-3">
+        <div class="friend-service">
+          <p><strong>Title:</strong> <%= friend_services.title %></p>
+          <p><strong>Description:</strong> <%= friend_services.description %></p>
+          <p><strong>First Name:</strong> <%= friend_services.first_name %></p>
+          <p><strong>Last Name:</strong> <%= friend_services.last_name %></p>
+          <%= link_to "See Service", friend_services_path(friend_services), class: "btn btn-primary"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
