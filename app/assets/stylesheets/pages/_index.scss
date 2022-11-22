@@ -36,21 +36,24 @@ strong {
 
 }
 
-
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: 0% 20%;
   padding: 150px 0;
+  text-align: center;
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: 600;
+  font-size: 54px;
 }
 
 .banner h2 {
+  font-size: 26px;
+  color: #fff;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

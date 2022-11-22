@@ -11,12 +11,8 @@
   <p><strong>Interests:</strong> <%= @friend_service.interests %></p>
   <br>
   <h3>About the friend:</h3>
-  <p><strong>Name:</strong> <%= @friend_service.first_name  %> <%= @friend_service.last_name %></p>
-  <p><strong>Age:</strong> <%= @friend_service.age %></p>
+  <p><strong>Name:</strong> <%= @friend_service.first_name  %> <%= @friend_service.last_name %>, <%= @friend_service.age %></p>
   <p><strong>Gender:</strong> <%= @friend_service.gender %></p>
-  <br>
-  <h3>Contact:</h3>
-  <p><strong>Phone Number:</strong> <%= @friend_service.phone_number %></p>
   <p><strong>Email:</strong> <%= @friend_service.user.email %></p>
   <br>
   <br>
