@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_bookmarks
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_booking, only: [ :show ]
+  before_action :set_boat, only: [ :new, :create ]
 
   def index
   @bookings = current_user.bookings
@@ -12,7 +14,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.boat = Boat.find(params[:friend_service_id])
+    @booking.friend_service = friend_service.find(params[:friend_service_id])
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -22,18 +24,20 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+  end
 
   private
 
-  def booking_params
-    params.require(:booking)
-  end
-
   def set_booking
-    @booking = Booking.find
+    @booking = Booking.find(params[:id])
   end
 
-  def set_list
-    @list = List.find(params[:list_id])
+  def set_friend_service
+    @friend_service = FriendService.find(params[:friend_service_id])
+  end
+
+
+  def booking_params
+    params[:booking]
   end
 end
