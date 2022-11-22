@@ -1,4 +1,5 @@
 class FriendServicesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @friend_service = FriendService.new

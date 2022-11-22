@@ -15,9 +15,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_141735) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "status"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "status", default: 0
+    t.bigint "user_id", null: false
+    t.bigint "friend_service_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["friend_service_id"], name: "index_bookings_on_friend_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "friend_services", force: :cascade do |t|
@@ -32,8 +38,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_141735) do
     t.string "interests"
     t.string "title"
     t.text "description"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_friend_services_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_141735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "friend_services"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "friend_services", "users"
 end

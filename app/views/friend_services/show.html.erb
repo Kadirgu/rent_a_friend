@@ -17,7 +17,7 @@
   <br>
   <h3>Contact:</h3>
   <p><strong>Phone Number:</strong> <%= @friend_service.phone_number %></p>
-  <p><strong>Email:</strong> <%= @friend_service.email %></p>
+  <p><strong>Email:</strong> <%= @friend_service.user.email %></p>
   <br>
   <br>
   <%= link_to "Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
