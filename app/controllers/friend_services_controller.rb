@@ -1,12 +1,27 @@
 class FriendServicesController < ApplicationController
+
+  def new
+    @friend_service = FriendService.new
+  end
+
   def index
     @friend_services = FriendService.all
   end
   
-  def create
-    @friend_service = FriendService.new(friend_service_params)
+  def show
+    @friend_service = FriendService.find(params[:id])
   end
 
+  def create
+    @friend_service = FriendService.new(friend_service_params)
+    @friend_service.user = current_user
+    if @friend_service.save
+      redirect_to friend_service_path(@friend_service)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+  
   def destroy
     @user = user.find(params[:id])
     @user.destroy
@@ -14,17 +29,13 @@ class FriendServicesController < ApplicationController
     #redirect_to friends_service_path
   end
 
-  def edit
-    user = User.find_by(id: params[:id])
-  if current_user == user
-    user.update()
-    flash[:success] = "The user was successfully updated."
+  private
+
+  def set_friend_service
+    @friend_service = FriendService.find(params[:id])
   end
 
   def friend_service_params
-    params.require(:friend_service)
-
-  def show
-    @friend_service = FriendService.find(params[:id])
+    params.require(:friend_service).permit(:first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests)
   end
 end
