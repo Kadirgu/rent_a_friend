@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   end
 
-  # def destroy 
+  # def destroy
   #   @user = user.find(params[:id])
   #   @user.destroy
   #   flash[:success] = "The user was successfully destroyed."
