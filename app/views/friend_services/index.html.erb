@@ -6,14 +6,18 @@
 </div>
 
 <div class="container">
+<h2>All Friend Services</h2>
+<br>
   <div class="row">
     <% @friend_services.each do |friend_services| %>
       <div class="col-3">
-        <p><strong>Title:</strong> <%= friend_services.title %></p>
-        <p><strong>Description:</strong> <%= friend_services.description %></p>
-        <p><strong>First Name:</strong> <%= friend_services.first_name %></p>
-        <p><strong>Last Name:</strong> <%= friend_services.last_name %></p>
-        <%= link_to "See Service", friend_services_path(friend_services)%>
+        <div class="friend-service">
+          <p><strong>Title:</strong> <%= friend_services.title %></p>
+          <p><strong>Description:</strong> <%= friend_services.description %></p>
+          <p><strong>First Name:</strong> <%= friend_services.first_name %></p>
+          <p><strong>Last Name:</strong> <%= friend_services.last_name %></p>
+          <%= link_to "See Service", friend_services_path(friend_services), class: "btn btn-primary"%>
+        </div>
       </div>
     <% end %>
   </div>
