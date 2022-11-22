@@ -14,7 +14,7 @@ class FriendServicesController < ApplicationController
     if @friend_service.save
       redirect_to friend_service_path(@friend_service)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,6 +25,6 @@ class FriendServicesController < ApplicationController
   end
 
   def friend_service_params
-    params.require(:friend_service)
+    params.require(:friend_service).permit(:first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests)
   end
 end
