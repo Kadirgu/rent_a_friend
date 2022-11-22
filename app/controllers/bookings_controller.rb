@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-<<<<<<< HEAD
-  
-=======
   before_action :set_bookmarks
+
+  def index
+  @bookings = current_user.bookings
+  end
 
   def new
     @booking = Booking.new
@@ -10,13 +11,17 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.list = @list
+    @booking.user = current_user
+    @booking.boat = Boat.find(params[:friend_service_id])
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      redirect_to friend_service_path(@friend_service)
+    end
   end
 
   def destroy
     @booking.destroy
-    redirect_to list_path(@booking.list)
-  end
 
   private
 
@@ -31,5 +36,4 @@ class BookingsController < ApplicationController
   def set_list
     @list = List.find(params[:list_id])
   end
->>>>>>> a8512b8abed97d04f97af7c73b6b88c3e608eacc
 end
