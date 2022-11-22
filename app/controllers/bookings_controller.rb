@@ -4,6 +4,8 @@ class BookingsController < ApplicationController
   @bookings = current_user.bookings
   end
 
+  before_action :set_bookmarks
+
   def new
     @booking = Booking.new
   end
@@ -30,6 +32,10 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find
+  end
+
+  def set_list
+    @list = List.find(params[:list_id])
   end
 
 end

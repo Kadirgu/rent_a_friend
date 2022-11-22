@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
+<% @friend_services.each do |friend_services| %>
+  <p>Title: <%= friend_services.title %></p>
+  <p>Description: <%= friend_services.description %></p>
+  <p>First Name: <%= friend_services.first_name %></p>
+  <p>Last Name: <%= friend_services.last_name %></p>
+  <p>Age: <%= friend_services.age %></p>
+  <p>Gender: <%= friend_services.gender %></p>
+  <p>Phone Number: <%= friend_services.phone_number %></p>
+  <p>Email: <%= friend_services.email %></p>
+  <p>Category: <%= friend_services.category %></p>
+  <p>Availability: <%= friend_services.availability %></p>
+  <p>Interests: <%= friend_services.interests %></p>
+  <%= friend_services.description %>
+<% end %>
