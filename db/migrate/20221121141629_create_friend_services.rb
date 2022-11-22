@@ -10,7 +10,8 @@ class CreateFriendServices < ActiveRecord::Migration[7.0]
       t.string :category
       t.string :availability
       t.string :interests
-
+      t.string :title
+      t.text :description
       t.timestamps
     end
   end

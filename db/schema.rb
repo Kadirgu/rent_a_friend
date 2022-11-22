@@ -21,17 +21,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_141735) do
   end
 
   create_table "friend_services", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
-    t.string "gender"
     t.string "phone_number"
     t.string "email"
+    t.string "gender"
     t.string "category"
     t.string "availability"
     t.string "interests"
+    t.string "title"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,4 +47,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_141735) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
