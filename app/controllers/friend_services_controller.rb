@@ -7,6 +7,10 @@ class FriendServicesController < ApplicationController
   def index
     @friend_services = FriendService.all
   end
+  
+  def show
+    @friend_service = FriendService.find(params[:id])
+  end
 
   def create
     @friend_service = FriendService.new(friend_service_params)
@@ -16,6 +20,13 @@ class FriendServicesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+  
+  def destroy
+    @user = user.find(params[:id])
+    @user.destroy
+    flash[:success] = "The user was successfully destroyed."
+    #redirect_to friends_service_path
   end
 
   private

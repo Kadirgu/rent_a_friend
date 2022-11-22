@@ -1,18 +1,25 @@
-<h1>friend services show</h1>
-
- <% @friend_services.each do |friend_services| %>
-  <div class="col-3">
-    <p><strong>Title:</strong> <%= friend_services.title %></p>
-    <p><strong>Description:</strong> <%= friend_services.description %></p>
-    <p><strong>First Name:</strong> <%= friend_services.first_name %></p>
-    <p><strong>Last Name:</strong> <%= friend_services.last_name %></p>
-    <p><strong>Age:</strong> <%= friend_services.age %></p>
-    <p><strong>Gender:</strong> <%= friend_services.gender %></p>
-    <p><strong>Phone Number:</strong> <%= friend_services.phone_number %></p>
-    <p><strong>Email:</strong> <%= friend_services.email %></p>
-    <p><strong>Category:</strong> <%= friend_services.category %></p>
-    <p><strong>Availability:</strong> <%= friend_services.availability %></p>
-    <p><strong>Interests:</strong> <%= friend_services.interests %></p>
-    <%= link_to "See Service", friend_services_path%>
-  </div>
-<% end %>
+<div class="container">
+  <img class="friend-service-detail-image" src="https://images.unsplash.com/photo-1486704155675-e4c07f8ad160?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+  <h1><%= @friend_service.title %></h1>
+  <h2><%= @friend_service.description %></h2>
+  <br>
+  <h3>Availability:</h3>
+  <p><%= @friend_service.availability %></p>
+  <br>
+  <h3>Activity:</h3>
+  <p><strong>Category:</strong> <%= @friend_service.category %></p>
+  <p><strong>Interests:</strong> <%= @friend_service.interests %></p>
+  <br>
+  <h3>About the friend:</h3>
+  <p><strong>Name:</strong> <%= @friend_service.first_name  %> <%= @friend_service.last_name %></p>
+  <p><strong>Age:</strong> <%= @friend_service.age %></p>
+  <p><strong>Gender:</strong> <%= @friend_service.gender %></p>
+  <br>
+  <h3>Contact:</h3>
+  <p><strong>Phone Number:</strong> <%= @friend_service.phone_number %></p>
+  <p><strong>Email:</strong> <%= @friend_service.email %></p>
+  <br>
+  <br>
+  <%= link_to "Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
+  <%= link_to 'Delete Service', friend_service_path, class: 'btn btn-danger btn-sm', data: {turbo_method: :delete, turbo_confirm: "Are you sure you?"}%>
+</div>
