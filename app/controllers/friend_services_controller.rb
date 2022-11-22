@@ -7,7 +7,7 @@ class FriendServicesController < ApplicationController
   def index
     @friend_services = FriendService.all
   end
-  
+
   def show
     @friend_service = FriendService.find(params[:id])
   end
@@ -36,6 +36,6 @@ class FriendServicesController < ApplicationController
   end
 
   def friend_service_params
-    params.require(:friend_service).permit(:first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests)
+    params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests)
   end
 end
