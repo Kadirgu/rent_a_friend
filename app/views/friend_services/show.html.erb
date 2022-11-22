@@ -1,1 +1,18 @@
 <h1>friend services show</h1>
+
+ <% @friend_services.each do |friend_services| %>
+      <div class="col-3">
+        <p><strong>Title:</strong> <%= friend_services.title %></p>
+        <p><strong>Description:</strong> <%= friend_services.description %></p>
+        <p><strong>First Name:</strong> <%= friend_services.first_name %></p>
+        <p><strong>Last Name:</strong> <%= friend_services.last_name %></p>
+        <p><strong>Age:</strong> <%= friend_services.age %></p>
+        <p><strong>Gender:</strong> <%= friend_services.gender %></p>
+        <p><strong>Phone Number:</strong> <%= friend_services.phone_number %></p>
+        <p><strong>Email:</strong> <%= friend_services.email %></p>
+        <p><strong>Category:</strong> <%= friend_services.category %></p>
+        <p><strong>Availability:</strong> <%= friend_services.availability %></p>
+        <p><strong>Interests:</strong> <%= friend_services.interests %></p>
+        <%= link_to "See Service", friend_services_path%>
+      </div>
+    <% end %>
