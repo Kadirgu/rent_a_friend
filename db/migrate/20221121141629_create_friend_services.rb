@@ -5,10 +5,9 @@ class CreateFriendServices < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.integer :age
       t.string :phone_number
-      t.string :email
       t.string :gender
       t.string :category
-      t.string :availability
+      t.date :availability
       t.string :interests
       t.string :title
       t.text :description
