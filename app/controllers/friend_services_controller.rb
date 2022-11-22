@@ -1,12 +1,8 @@
 class FriendServicesController < ApplicationController
-  def new
-    @friend_service = FriendService.new
-  end
-
   def index
     @friend_services = FriendService.all
   end
-
+  
   def create
     @friend_service = FriendService.new(friend_service_params)
   end
@@ -27,5 +23,8 @@ class FriendServicesController < ApplicationController
 
   def friend_service_params
     params.require(:friend_service)
+
+  def show
+    @friend_service = FriendService.find(params[:id])
   end
 end

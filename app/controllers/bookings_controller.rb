@@ -1,19 +1,27 @@
 class BookingsController < ApplicationController
   before_action :set_bookmarks
 
+  def index
+  @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.list = @list
+    @booking.user = current_user
+    @booking.boat = Boat.find(params[:friend_service_id])
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      redirect_to friend_service_path(@friend_service)
+    end
   end
 
   def destroy
     @booking.destroy
-    redirect_to list_path(@booking.list)
-  end
 
   private
 
