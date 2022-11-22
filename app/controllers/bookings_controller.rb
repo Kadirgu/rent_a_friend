@@ -1,10 +1,9 @@
 class BookingsController < ApplicationController
+  before_action :set_bookmarks
 
   def index
   @bookings = current_user.bookings
   end
-
-  before_action :set_bookmarks
 
   def new
     @booking = Booking.new
@@ -37,5 +36,4 @@ class BookingsController < ApplicationController
   def set_list
     @list = List.find(params[:list_id])
   end
-
 end
