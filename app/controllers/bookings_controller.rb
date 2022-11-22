@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+<<<<<<< HEAD
+  
+=======
   before_action :set_bookmarks
 
   def new
@@ -28,4 +31,5 @@ class BookingsController < ApplicationController
   def set_list
     @list = List.find(params[:list_id])
   end
+>>>>>>> a8512b8abed97d04f97af7c73b6b88c3e608eacc
 end
