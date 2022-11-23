@@ -19,6 +19,7 @@ class FriendServicesController < ApplicationController
 
   def show
     @friend_service = FriendService.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
@@ -50,9 +51,6 @@ class FriendServicesController < ApplicationController
 
   private
 
-  def set_friend_service
-    @friend_service = FriendService.find(params[:id])
-  end
 
   def friend_service_params
     params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests, :photo, :location, :latitude, :longitude)
