@@ -1,1 +1,10 @@
-<h1>friend services edit</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @friend_service.photo.key %>')">
+<div class="container"></div>
+</div>
+<div class="container">
+  <h1>Update <%=@friend_service.title%></h1>
+  <br>
+  <%= link_to "← Go back", friend_service_path(@friend_service), class: 'btn btn-primary btn-sm'%>
+  <br><br>
+  <%= render "form", friend_service: @friend_service %>
+</div>

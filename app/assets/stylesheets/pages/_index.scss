@@ -33,7 +33,6 @@ strong {
 .container {
   max-width: 1200px;
   margin: 100px auto;
-
 }
 
 .banner {
@@ -90,6 +89,22 @@ strong {
 }
 
 
-.test {
-  height: 10px;
+
+/*NAVBAR*/
+.container-nav {
+  max-width: 1200px;
+  padding: 10px 0px;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: #fff;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
