@@ -1,1 +1,13 @@
 <h1>List of all bookings</h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="col-6">
+      <div class="friend-service">
+        <%#= cl_image_tag(booking.friend_service.photo.key, class: "friend-service-overview-image ") %>
+        <div class="friend-service-content">
+          <h1><%#= booking.friend_service.title %></h2>
+          <h2><%#= booking.friend_service.description %>
+        </div>
+      </div>
+    </div>
+  <% end %>
