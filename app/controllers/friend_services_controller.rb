@@ -31,6 +31,16 @@ class FriendServicesController < ApplicationController
     redirect_to friend_services_path
   end
 
+  def edit
+    @friend_service = FriendService.find(params[:id])
+  end
+
+  def update
+    @friend_service = FriendService.find(params[:id])
+    @friend_service.update(friend_service_params)
+    redirect_to friend_service_path
+  end
+
   private
 
 
