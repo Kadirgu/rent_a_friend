@@ -1,24 +1,29 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_booking, only: [ :show ]
-  before_action :set_boat, only: [ :new, :create ]
+  #before_action :set_friend_service, only: [ :new, :create ]
 
   def index
-  @bookings = current_user.bookings
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
+  def show
+    authorize @booking
   end
 
   def new
     @booking = Booking.new
+    @friend_service = FriendService.find(params[:friend_service_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.friend_service = FriendService.find(params[:friend_service_id])
     @booking.user = current_user
-    @booking.friend_service = friend_service.find(params[:friend_service_id])
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
-      redirect_to friend_service_path(@friend_service)
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,11 +37,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def set_friend_service
-    @friend_service = FriendService.find(params[:friend_service_id])
-  end
 
   def booking_params
-    params[:booking]
+    params[:booking].permit(:status, :start_date, :end_date, :user, :friend_service)
   end
 end
