@@ -1,18 +1,16 @@
-<h1>bookings new</h1>
+<%= render "layouts/navbar" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @friend_service.photo.key %>')">
+<div class="container"></div>
+</div>
 
 <div class="container">
-    <div class="row">
-      <div class="col-6 m-auto">
-        <div class="flat-form">
-          <h1>Book your Friend</h1>
-          <div class="mt-3">
-            <%= simple_form_for([@friend_service, @booking]) do |f| %>
-              <%= f.input :start_date, as: :date, html5: true %>
-              <%= f.input :end_date, as: :date, html5: true %>
-              <%= f.submit %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h1>Book your Friend</h1>
+  <%= link_to "← Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
+  <br><br>
+    <%= simple_form_for([@friend_service, @booking]) do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.submit class: 'btn btn-primary btn-sm'%>
+    <% end %>
 </div>
+<%= render "layouts/footer" %>
