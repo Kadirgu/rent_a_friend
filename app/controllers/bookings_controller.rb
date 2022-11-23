@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   before_action :set_boat, only: [ :new, :create ]
 
   def index
-  @bookings = current_user.bookings
+    @bookings = current_user.bookings
   end
 
   def new
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      redirect_to friend_service_path(@friend_service)
+      redirect_to friend_services_path(@friend_service)
     end
   end
 
@@ -35,7 +35,6 @@ class BookingsController < ApplicationController
   def set_friend_service
     @friend_service = FriendService.find(params[:friend_service_id])
   end
-
 
   def booking_params
     params[:booking]

@@ -33,7 +33,6 @@ strong {
 .container {
   max-width: 1200px;
   margin: 100px auto;
-
 }
 
 .banner {
@@ -58,12 +57,10 @@ strong {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-
 .friend-service {
   box-shadow: 0px 5px 10px rgba(50,50,50,.25);
   margin: 15px 0px;
 }
-
 
 .friend-service-detail-image {
   width: 100%;
@@ -89,7 +86,61 @@ strong {
   padding: 20px;
 }
 
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
 
-.test {
-  height: 10px;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.footer-bg {
+  background: #222222;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  color: #fff;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #fff;
+  opacity: 0.75;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-link {
+  opacity: .5;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    color: #000;
+  }
 }
