@@ -7,10 +7,19 @@ class FriendServicesController < ApplicationController
 
   def index
     @friend_services = FriendService.all
+
+    @markers = @friend_services.geocoded.map do |friend_service|
+      {
+        lat: friend_service.latitude,
+        lng: friend_service.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {friend_service: friend_service})
+      }
+    end
   end
 
   def show
     @friend_service = FriendService.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
@@ -30,13 +39,20 @@ class FriendServicesController < ApplicationController
     redirect_to friend_services_path
   end
 
-  private
-
-  def set_friend_service
+  def edit
     @friend_service = FriendService.find(params[:id])
   end
 
+  def update
+    @friend_service = FriendService.find(params[:id])
+    @friend_service.update(friend_service_params)
+    redirect_to friend_service_path
+  end
+
+  private
+
+
   def friend_service_params
-    params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests, :photo)
+    params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests, :photo, :location, :latitude, :longitude)
   end
 end

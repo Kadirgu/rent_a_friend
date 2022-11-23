@@ -34,4 +34,9 @@
     <% end %>
   </div>
 </div>
-<%= render "layouts/footer" %>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY=pk.eyJ1Ijoib2dzb3VuZGZ4IiwiYSI6ImNsOWdzaWZ6ejB2YzMzdm8wMDZlMXFpcTkifQ.OPfOfnVZylDC8lV0AhhOrQ '] %>">
+</div>

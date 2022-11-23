@@ -1,27 +1,13 @@
 <%= render "layouts/navbar" %>
 <h1>List of all bookings</h1>
-
-<div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-6">
-        <div class="friend-service">
-          <img style="height: 250px; width: 100%; object-fit: cover;" src="https://images.unsplash.com/photo-1486704155675-e4c07f8ad160?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
-          <div class="friend-service-content">
-            <h1><%= friend_service.title %></h2>
-            <h2><%= friend_service.description %></>
-            <div class="friend-service-details">
-              <p><strong>Availability:</strong><br><%= friend_service.availability %></p>
-              <p><strong>Category:</strong><br><%= friend_service.category %></p>
-              <p><strong>Interests:</strong><br><%= friend_service.interests %></p>
-              <p><strong>About:</strong><br><%= friend_service.first_name %>, <%= friend_service.age %>, <%= friend_service.gender %></p>
-            </div>
-            <br>
-            <%= link_to "See Service", friend_service_path(friend_service), class: "btn btn-info btn-sm"%>
-            <%= link_to "Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
-            <%= link_to 'Cancel Service', booking_path(@friend_service), class: 'btn btn-danger btn-sm', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </div>
+  <% @bookings.each do |booking| %>
+    <div class="col-6">
+      <div class="friend-service">
+        <%#= cl_image_tag(booking.friend_service.photo.key, class: "friend-service-overview-image ") %>
+        <div class="friend-service-content">
+          <h1><%#= booking.friend_service.title %></h2>
+          <h2><%#= booking.friend_service.description %>
         </div>
       </div>
-    <% end %>
-  </div>
-<%= render "layouts/footer" %>
+    </div>
+  <% end %>
