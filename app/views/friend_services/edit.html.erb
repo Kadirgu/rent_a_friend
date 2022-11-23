@@ -1,3 +1,5 @@
+<%= render "layouts/navbar" %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @friend_service.photo.key %>')">
 <div class="container"></div>
 </div>
@@ -8,3 +10,4 @@
   <br><br>
   <%= render "form", friend_service: @friend_service %>
 </div>
+<%= render "layouts/footer" %>
