@@ -36,7 +36,6 @@ class BookingsController < ApplicationController
     @friend_service = FriendService.find(params[:friend_service_id])
   end
 
-
   def booking_params
     params[:booking]
   end
