@@ -1,0 +1,28 @@
+<%= render "layouts/navbar" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+<div class="container"></div>
+</div>
+<div class="container">
+  <h1>All my listings</h1>
+  <div class ="friend_grid">
+    <% @my_friend_services.each do |listing| %>
+      <div class="friend-service">
+          <%= cl_image_tag(listing.photo.key, class: "friend-service-overview-image ") %>
+          <div class="friend-service-content">
+            <h1><%= listing.title %></h2>
+            <h2><%= listing.description %>
+            <div class="friend-service-details">
+              <p><strong>Availability:</strong><br><%= listing.availability %></p>
+              <p><strong>Category:</strong><br><%= listing.category %></p>
+              <p><strong>Interests:</strong><br><%= listing.interests %></p>
+              <p><strong>About the friend:</strong><br><%= listing.first_name %>, <%= listing.age %>, <%= listing.gender %></p>
+            </div>
+            <br>
+            <%= link_to "See Service", friend_service_path(listing), class: "btn btn-primary btn-sm"%>
+          </div>
+        </div>
+
+    <% end %>
+    </div>
+  </div>
+  <%= render "layouts/footer" %>

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :destroy]
   end
   resources :users
+  get "my_listings", to: "friend_services#my_listings", as: "my_listings"
 
 end
