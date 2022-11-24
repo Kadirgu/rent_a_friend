@@ -83,5 +83,4 @@ gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 
 gem "geocoder"
-
 gem "pg_search"
