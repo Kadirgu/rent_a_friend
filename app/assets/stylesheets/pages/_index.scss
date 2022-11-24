@@ -171,6 +171,23 @@ strong {
   font-family: "Open Sans", sans-serif;
 }
 
+.map-popup-title {
+  font-weight: 500 !important;
+  color: #000 !important;
+  text-decoration: inherit;
+}
+
+.map-popup-description {
+  color: #000 !important;
+  text-decoration: inherit;
+}
+
+.map-popup-img {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
 
 /*BOOKING*/
 
