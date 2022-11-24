@@ -1,2 +1,5 @@
-<h2><%= friend_service.title %></h2>
-<p><%= friend_service.location %></p>
+<%= link_to friend_service_path(friend_service) do %>
+  <%= cl_image_tag(friend_service.photo.key, class: "map-popup-img") %>
+  <h2 class="map-popup-title"><%= friend_service.title %></h2>
+  <p class="map-popup-description"><%= friend_service.location %></p>
+<%end%>
