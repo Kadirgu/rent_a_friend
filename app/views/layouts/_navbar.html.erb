@@ -13,6 +13,7 @@
           <li class="nav-item active d-flex">
             <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
             <%= link_to "My Friend Services", my_listings_path, class: "nav-link" %>
+            <%= cl_image_tag(current_user.photo.key, class: 'avatar-image') %>
             <%= link_to "Log out", destroy_user_session_path, class: "btn btn-primary navi-link", data: {turbo_method: :delete} %>
           </li>
         <% else %>
