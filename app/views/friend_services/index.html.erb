@@ -33,7 +33,7 @@
               <div class="friend-service-details">
                 <p><strong>Availability:</strong><br><%= friend_service.availability %></p>
                 <p><strong>Category:</strong><br><%= friend_service.category %></p>
-                <p><strong>About the friend:</strong><br><%= friend_service.first_name %>, <%= friend_service.age %>, <%= friend_service.gender %></p>
+                <p><strong>About the friend:</strong><br><%= friend_service.user.first_name %>, <%= friend_service.user.age %>, <%= friend_service.user.gender %></p>
               </div>
               <br>
               <%= link_to "See Service", friend_service_path(friend_service), class: "btn btn-primary btn-sm"%>
