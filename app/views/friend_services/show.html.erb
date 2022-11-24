@@ -10,13 +10,15 @@
   <h3>Availability:</h3>
   <p><%= @friend_service.availability %></p>
   <br>
-  <h3>Activity:</h3>
-  <p><strong>Category:</strong> <%= @friend_service.category %></p>
-  <p><strong>Interests:</strong> <%= @friend_service.interests %></p>
+  <h3>Price:</h3>
+  <p>$<%= @friend_service.price %>0</p>
+  <br>
+  <h3>Category:</h3>
+  <p><%= @friend_service.category %></p>
   <br>
   <h3>About the friend:</h3>
-  <p><strong>Name:</strong> <%= @friend_service.first_name  %> <%= @friend_service.last_name %>, <%= @friend_service.age %></p>
-  <p><strong>Gender:</strong> <%= @friend_service.gender %></p>
+  <p><strong>Name:</strong> <%= @friend_service.user.first_name  %> <%= @friend_service.user.last_name %>, <%= @friend_service.user.age %></p>
+  <p><strong>Gender:</strong> <%= @friend_service.user.gender %></p>
   <p><strong>Email:</strong> <%= @friend_service.user.email %></p>
   <br>
   <br>

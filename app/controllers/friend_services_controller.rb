@@ -60,6 +60,6 @@ class FriendServicesController < ApplicationController
 
 
   def friend_service_params
-    params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests, :photo, :location, :latitude, :longitude)
+    params.require(:friend_service).permit(:title, :description, :first_name, :last_name, :age, :phone_number, :email, :gender, :category, :availability, :interests, :photo, :location, :latitude, :longitude, :price)
   end
 end
