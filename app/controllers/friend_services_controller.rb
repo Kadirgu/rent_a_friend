@@ -6,7 +6,11 @@ class FriendServicesController < ApplicationController
   end
 
   def index
-    @friend_services = FriendService.all
+    if params[:query] && !params[:query].empty?
+      @friend_services = FriendService.search_a_lot(params[:query])
+    else
+      @friend_services = FriendService.all
+    end
 
     @markers = @friend_services.geocoded.map do |friend_service|
       {
