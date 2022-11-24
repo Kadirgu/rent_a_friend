@@ -48,6 +48,9 @@ class FriendServicesController < ApplicationController
     @friend_service.update(friend_service_params)
     redirect_to friend_service_path
   end
+  def my_listings
+    @my_friend_services = FriendService.where(user_id: current_user)
+  end
 
   private
 

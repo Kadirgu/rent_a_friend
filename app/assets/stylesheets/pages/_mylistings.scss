@@ -1,0 +1,9 @@
+.friend_grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.list_card{
+  background-color: aquamarine;
+}
