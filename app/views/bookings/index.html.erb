@@ -9,7 +9,7 @@
         <div class="friend-service-content">
         <div class="row">
           <div class="col-6">
-            <h1>Booking #<%=booking.id%> with <%= booking.friend_service.user.first_name%> <%= booking.friend_service.user.last_name%></h1><br>
+            <h1>Booking with <%= booking.friend_service.user.first_name%> <%= booking.friend_service.user.last_name%></h1><br>
               <div class="user-avatars">
                 <div class="avatar-container">
                   <%= cl_image_tag(current_user.photo.key, class: 'booking-avatar-image', alt: "MyInc Logo") %>
