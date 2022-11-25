@@ -24,6 +24,7 @@ class FriendServicesController < ApplicationController
   def show
     @friend_service = FriendService.find(params[:id])
     @booking = Booking.new
+    @user = @friend_service.user
   end
 
   def create

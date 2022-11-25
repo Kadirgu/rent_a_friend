@@ -34,8 +34,11 @@
       <br>
       <br>
       <%= link_to 'Book this buddy', new_friend_service_booking_path(@friend_service), class: 'btn btn-success btn-sm' %>
-      <%= link_to 'Update Service', edit_friend_service_path(@friend_service), class: 'btn btn-primary btn-sm' %>
-      <%= link_to 'Delete Service', friend_service_path(@friend_service), class: 'btn btn-danger btn-sm', data: {turbo_method: :delete, turbo_confirm: "Are you sure you?"} %>
+
+      <% if user_signed_in? && @user.first_name == current_user.first_name %>
+        <%= link_to 'Update Service', edit_friend_service_path(@friend_service), class: 'btn btn-primary btn-sm' %>
+        <%= link_to 'Delete Service', friend_service_path(@friend_service), class: 'btn btn-danger btn-sm', data: {turbo_method: :delete, turbo_confirm: "Are you sure you?"} %>
+      <%end%>
     </div>
   </div>
 </div>
