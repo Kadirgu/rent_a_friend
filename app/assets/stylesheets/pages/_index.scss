@@ -30,6 +30,11 @@ strong {
   font-weight: 600;
 }
 
+.index-title {
+  text-align: center;
+  font-size: 42px;
+}
+
 #logo {
   width: 175px;
 }
@@ -264,4 +269,12 @@ strong {
 .user-avatars {
   display: flex;
   gap: 10px;
+}
+
+
+/*SEARCH FIELD*/
+
+.search-field {
+  width: 500px;
+  margin: 20px auto 0px auto;
 }

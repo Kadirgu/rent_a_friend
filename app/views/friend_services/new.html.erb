@@ -1,17 +1,14 @@
 <%= render "layouts/navbar" %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80);">
+<div class="banner" style="background-position: 100% 100%;background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485216983937-749292830fcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1198&q=80);">
   <div class="container">
-    <h1>RentAFriend</h1>
-    <h2>Find friends for fun activities</h2>
+    <h1>Add your friend service</h1>
+    <h2>Add service and connect with other people</h2>
+    <%= link_to "← Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
   </div>
 </div>
 
 <div class="container">
-    <h1>Add a new Friend Service</h1>
-  <br>
-  <%= link_to "← Go back", friend_services_path, class: 'btn btn-primary btn-sm'%>
-  <br><br>
   <%= render "form", friend_service: @friend_service %>
 </div>
 <%= render "layouts/footer" %>

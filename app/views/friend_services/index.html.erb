@@ -3,20 +3,22 @@
   <div class="container">
     <h1>RentAFriend</h1>
     <h2>Find friends for fun activities</h2>
-    <a href="#friend-services" class="btn btn-primary btn-sm">See Friend Services</a>
+    <%= link_to 'Add Friend Service', new_friend_service_path, class: 'btn btn-primary btn-sm' %>
   </div>
 </div>
 
 <div class="container"  id="friend-services">
-  <%= form_with url: friend_services_path, method: :get, class: "d-flex" do %>
+  <h1 class="index-title">Friend Services</h1>
+  <%= form_with url: friend_services_path, method: :get, class: "d-flex search-field" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a friend"
+      placeholder: "Find a Friend Service"
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-  <br>
+  <br><br><br>
+
   <div class="row">
     <% @friend_services.each do |friend_service| %>
       <div class="col-6">
