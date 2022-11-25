@@ -25,8 +25,8 @@
               <h2><%= booking.friend_service.title %></h2>
               <h3><%= booking.friend_service.description %></h3><br>
               <strong>Category:</strong> <%= booking.friend_service.category %><br><br>
-              <strong>Start date:</strong> <%= booking.start_date %><br>
-              <strong>End date:</strong> <%= booking.end_date %><br><br>
+              <strong>Start date:</strong> <%= booking.start_date.strftime("%B %d, %Y") %><br>
+              <strong>End date:</strong> <%= booking.end_date.strftime("%B %d, %Y") %><br><br>
               <%= link_to 'See Service', friend_service_path(booking.friend_service), class: 'btn btn-primary btn-sm'%>
               <%= link_to 'Delete Booking', friend_service_booking_path(booking.friend_service, booking), class: 'btn btn-danger btn-sm', data: {turbo_method: :delete, turbo_confirm: "Are you sure you?"} %>
             </div>
