@@ -10,6 +10,18 @@
         <div class="row">
           <div class="col-6">
             <h1>Booking #<%=booking.id%> with <%= booking.friend_service.user.first_name%> <%= booking.friend_service.user.last_name%></h1><br>
+              <div class="user-avatars">
+                <div class="avatar-container">
+                  <%= cl_image_tag(current_user.photo.key, class: 'booking-avatar-image', alt: "MyInc Logo") %>
+                  <p><%= current_user.first_name %></p>
+                </div>
+                <div class="avatar-container">
+                  <%= cl_image_tag(booking.friend_service.user.photo.key, class: 'booking-avatar-image') %>
+                  <p><%= booking.friend_service.user.first_name %></p>
+                </div>
+              </div>
+              <br>
+              <br>
               <h2><%= booking.friend_service.title %></h2>
               <h3><%= booking.friend_service.description %></h3><br>
               <strong>Category:</strong> <%= booking.friend_service.category %><br><br>

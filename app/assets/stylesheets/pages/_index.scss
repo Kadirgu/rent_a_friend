@@ -226,7 +226,40 @@ strong {
   margin-right: 10px;
 }
 
+
+.booking-avatar-image {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .dropdown-toggle::after {
   vertical-align: -3px;
   cursor: pointer;
+}
+
+.avatar-container {
+  position: relative;
+
+  p {
+    width: 75px;
+    opacity: 0;
+    position: absolute;
+    bottom: -25px;
+    text-align: center;
+}
+
+  &:hover {
+
+    p {
+      opacity: 1;
+    }
+  }
+}
+
+
+.user-avatars {
+  display: flex;
+  gap: 10px;
 }
