@@ -24,6 +24,11 @@
       <div class="col-6">
         <div class="friend-service">
           <%= cl_image_tag(friend_service.photo.key, class: "friend-service-overview-image ") %>
+          <div class="absolute">
+            <div class="price-on-img">
+              <h3>$<%= friend_service.price %>0</h3>
+            </div>
+          </div>
           <div class="friend-service-content">
             <div class="friend-service-title-image">
                 <div>

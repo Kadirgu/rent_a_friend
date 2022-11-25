@@ -70,6 +70,7 @@ strong {
   box-shadow: 0px 5px 10px rgba(50,50,50,.25);
   margin: 15px 0px;
   border-radius: 3px;
+  position: relative;
 }
 
 .friend-service-detail-image {
@@ -286,5 +287,27 @@ strong {
   width: 100%;
   border: 1px solid lightgrey;
   box-shadow: none;
-  background-color: transparent;
+  background-color: #fff;
+}
+
+
+
+/*PRICE ON IMG*/
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.price-on-img {
+  background: #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 15px;
+  border: 1px solid #b8b8b8;
+  box-shadow: 0px 10px 20px rgba(50,50,50,.65);
 }
