@@ -3,7 +3,6 @@
     <%= link_to friend_services_path, class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dzii1oboh/image/upload/v1669288973/Design_ohne_Titel_36_hjagyy.png", id: 'logo'%>
     <% end %>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -11,8 +10,8 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "My Bookings", bookings_path, class: 'navbar-link'%>
             <%= link_to "My Friend Services", my_listings_path, class: 'navbar-link'%>
+            <%= link_to "My Bookings", bookings_path, class: 'navbar-link'%>
             <%= link_to "Log out", destroy_user_session_path, class: 'navbar-link', data: {turbo_method: :delete} %>
             </div>
           </li>

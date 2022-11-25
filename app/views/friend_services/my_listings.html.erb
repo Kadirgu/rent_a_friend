@@ -3,7 +3,10 @@
 <div class="container"></div>
 </div>
 <div class="container">
-  <h1>All my listings</h1>
+  <h1>All my Friend Services</h1>
+  <%= link_to "Add service", new_friend_service_path, class: 'btn btn-primary btn-sm'%>
+  <br>
+  <br>
   <div class ="friend_grid">
     <% @my_friend_services.each do |listing| %>
       <div class="friend-service">
@@ -14,8 +17,7 @@
             <div class="friend-service-details">
               <p><strong>Availability:</strong><br><%= listing.availability %></p>
               <p><strong>Category:</strong><br><%= listing.category %></p>
-              <p><strong>Interests:</strong><br><%= listing.interests %></p>
-              <p><strong>About the friend:</strong><br><%= listing.first_name %>, <%= listing.age %>, <%= listing.gender %></p>
+              <p><strong>About the friend:</strong><br><%= listing.user.first_name %>, <%= listing.user.age %>, <%= listing.user.gender %></p>
             </div>
             <br>
             <%= link_to "See Service", friend_service_path(listing), class: "btn btn-primary btn-sm"%>
