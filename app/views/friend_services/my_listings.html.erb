@@ -7,32 +7,32 @@
   <%= link_to "Add service", new_friend_service_path, class: 'btn btn-primary btn-sm'%>
   <br>
   <br>
-    <div class ="friend_grid">
-      <% @my_friend_services.each do |listing| %>
-        <div class="friend-service">
-            <%= cl_image_tag(listing.photo.key, class: "friend-service-overview-image ") %>
-            <div class="friend-service-content">
-              <div class="friend-service-title-image">
-                <div>
-                  <h1><%= listing.title %></h2>
-                  <h2><%= listing.description %>
-                </div>
-              <div>
-                <%= cl_image_tag(listing.user.photo.key, class: "friend-service-overview-user-image") %>
-              </div>
-              </div>
-              <div class="friend-service-details">
-                <p><strong>Availability:</strong><br><%= listing.availability %></p>
-                <p><strong>Category:</strong><br><%= listing.category %></p>
-                <p><strong>About the friend:</strong><br><%= listing.user.first_name %>, <%= listing.user.age %>, <%= listing.user.gender %></p>
-              </div>
-              <br>
-              <%= link_to "See Service", friend_service_path(listing), class: "btn btn-primary btn-sm"%>
+  <div class ="friend_grid">
+    <% @my_friend_services.each do |listing| %>
+      <div class="friend-service">
+        <%= cl_image_tag(listing.photo.key, class: "friend-service-overview-image ") %>
+        <div class="friend-service-content">
+          <div class="friend-service-title-image">
+            <div>
+              <h1><%= listing.title %></h2>
+              <h2><%= listing.description %>
             </div>
+          <div>
+            <%= cl_image_tag(listing.user.photo.key, class: "friend-service-overview-user-image") %>
+          </div>
+          </div>
+            <div class="friend-service-details">
+              <p><strong>Availability:</strong><br><%= listing.availability %></p>
+              <p><strong>Category:</strong><br><%= listing.category %></p>
+              <p><strong>About the friend:</strong><br><%= listing.user.first_name %>, <%= listing.user.age %>, <%= listing.user.gender %></p>
+            </div>
+            <br>
+            <%= link_to "See Service", friend_service_path(listing), class: "btn btn-primary btn-sm"%>
           </div>
         </div>
-      <% end %>
-    </div>
-
+      </div>
+    <% end %>
   </div>
-  <%= render "layouts/footer" %>
+</div>
+
+<%= render "layouts/footer" %>
